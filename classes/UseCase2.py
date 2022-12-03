@@ -1,10 +1,17 @@
-from classes.Camera import *
-from classes.Controller import *
-from classes.User import *
+from Camera import *
+from Controller import *
+from User import *
+from MobileApp import *
+from Door import *
 
-bianca = User(userType="owner")
-controllerA = Controller()
-displayA = InHouseDisplay("20x15")
+frank = User(userType="owner")
+controllerB = Controller()
+mobileAppB = MobileApp()
+doorB = Door("Front")
 
-
-controllerA.userAuthentication(False,False, self.keypad) 
+frank.userSignOn()
+mobileAppB.connectRemote(controllerB)
+controllerB.userAuthentication(False,False,True) 
+doorB.unlock()
+doorB.lock()
+frank.userSignOff()

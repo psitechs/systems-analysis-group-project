@@ -5,7 +5,7 @@ class User:
         self.userType = userType
 
     def userSignOn(self):
-        print("Start user authentication process in controller")
+        print("Starting user authentication process in controller")
 
     def userSignOff(self):
-        print("Disconnect from controller.")
+        print("Disconnecting from controller...")

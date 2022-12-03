@@ -36,9 +36,6 @@ class FacialRecognitionCamera(Camera):
 
 
 
-
-
-
 #Deprecated features   
 """class InternalCamera(Camera):
 #Class Variables

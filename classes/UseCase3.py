@@ -1,10 +1,16 @@
-from classes.Camera import *
-from classes.Controller import *
-from classes.User import *
+from Camera import *
+from Controller import *
+from User import *
+from MobileApp import *
+from Appliance import Kitchen
 
-bianca = User(userType="owner")
-controllerA = Controller()
-displayA = InHouseDisplay("20x15")
+lealon = User(userType="owner")
+controllerC = Controller()
+mobileAppC = MobileApp()
+kitchenC = Kitchen("Sink")
 
-
-controllerA.userAuthentication(False,False, self.keypad) 
+lealon.userSignOn()
+mobileAppC.connectRemote(controllerC)
+controllerC.userAuthentication(False,False,True) 
+kitchenC.off()
+lealon.userSignOff()

@@ -17,6 +17,10 @@ class Controller:
         self.voiceRecognition = voiceRecognitionData
         self.pin = pinData
 
+        if pinData:
+            print("Pin confirmed. Access Granted")
+            return None
+
         if self.faceID:
             print("Facial scan confirmed. Access granted.")
         else:
@@ -26,8 +30,7 @@ class Controller:
             time.sleep(3)
             if self.voiceRecognition:
                 print("Voice Validation confirmed. Access granted.")
-            else:
-                print("Pin confirmed. Access Granted")
+                
 
     def saveUserProfile(self):
         print("Saving user profile")
