@@ -1,20 +1,25 @@
+Vector= list[float]
+
 class Camera: 
 #Class Variables
-    #Determines the color of the camera's outer casing
-    casingColor = [0,0,0]
-    resolution = "1080p"
+    #Determines the location of a camera in a modeled 3D space of a home in meters
+    cameraLocation = Vector
+    #Determines the current zoom level of a camera
+    cameraZoom = float
 
 #ClassFunctions
     #Instantiates object of this class
-    def __init__(self) -> None:
-        pass 
-
-    #Uses Nanotech to change camera outer casing's color
-    def changeCaseColor(self, R,G,B):
-        self.casingColor = [R,G,B]
-
+    def __init__(self, location: Vector, zoom: float) -> None:
+        self.cameraLocation = location
+        self.cameraZoom = zoom 
     
-class InternalCamera(Camera):
+    #Adjusts zoom level of the camera
+    def changeZoom(self, zoomLevel: float):
+        self.cameraZoom = zoomLevel
+        print(f"Camera zoom set to {self.cameraZoom}")
+
+#Deprecated features   
+"""class InternalCamera(Camera):
 #Class Variables
     #Indicates whether camera is currently on
     MonitoringIndicatorLight = True
@@ -41,4 +46,4 @@ class ExternalCamera(Camera):
     #Pans the camera in the specified directions to specified number of degrees
     def pitchCam(self,degree):
         self.cameraPitch = degree
-
+"""
