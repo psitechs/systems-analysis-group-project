@@ -1,4 +1,8 @@
-Vector= list[float]
+import time
+
+Vector = list[float]
+FaceMap = list[Vector]
+
 
 class Camera: 
 #Class Variables
@@ -17,6 +21,23 @@ class Camera:
     def changeZoom(self, zoomLevel: float):
         self.cameraZoom = zoomLevel
         print(f"Camera zoom set to {self.cameraZoom}")
+
+class FacialRecognitionCamera(Camera):
+#Class Variables
+    #Holds a list of points representing representing the unique 3D information of a user's face
+    biometricScanner = None
+
+    def validateFaceID(self,faceMap: FaceMap):
+        #captures and sends face map data to controller for authentication
+        self.biometricScanner = faceMap
+        print("Sending FaceID Data to controller")
+        print("Processing...")
+        time.sleep(3)
+
+
+
+
+
 
 #Deprecated features   
 """class InternalCamera(Camera):
